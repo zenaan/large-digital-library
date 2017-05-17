@@ -2,7 +2,7 @@
 Notes info decisions and schemas for a large library which is shareable and updatable by many people around the world.
 
 
-# Principles
+## Principles
 
    -  there are millions of books, too many to store in one directory
       -  e.g. a single git archive would be too large
@@ -48,7 +48,7 @@ Notes info decisions and schemas for a large library which is shareable and upda
 
 
 
-# Meta data
+## Meta data
 
 Metadata facilitates creation of library-wide indexes for searching, category hiearchy creation tools, etc.
 
@@ -71,7 +71,7 @@ TODO: create a YAML schema/ template for metadata.yaml
 
 
 
-# Formats and encodings
+## Formats and encodings
 
 The canonical encoding for text data is UTF-8.
    -  Refer http://utf8everywhere.org/
@@ -90,7 +90,7 @@ File system:
 
 
 
-# Tools
+## Tools
 
    -  git, git annex, git archive
    -  see https://git.wiki.kernel.org/index.php/SubprojectSupport
@@ -98,7 +98,7 @@ File system:
 
 
 
-# Hierarchy components/ categories
+## Hierarchy components/ categories
 
 Proposed levels/ categories/ hierarchy components:
    -  content type
@@ -131,7 +131,7 @@ Content types:
    -  software (distributions have their package management systems, so perhaps library only for proprietary software)
 
 
-# Suggested canonical hierarchy
+## Suggested canonical hierarchy
 
 This is the suggested universal library directory storage hierarchy:
 
@@ -167,7 +167,7 @@ This is the suggested universal library directory storage hierarchy:
 
 
 
-# Decisions
+## Decisions
 
 Decisions made unless good arguments to the contrary arise:
    -  content type
