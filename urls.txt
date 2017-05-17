@@ -1,4 +1,10 @@
 
+# Other links
+
+The discussion started at here:
+    https://lists.cpunks.org/pipermail/cypherpunks/2017-May/037777.html
+
+
 # Possibly useful links
 
     https://en.wikipedia.org/wiki/Outline_of_science
@@ -11,4 +17,11 @@
     https://en.wikipedia.org/wiki/Formal_sciences
     https://en.wikipedia.org/wiki/Outline_of_natural_science
     https://en.wikipedia.org/wiki/Social_science
+
+
+    https://en.wikipedia.org/wiki/List_of_hash_functions
+    https://en.wikipedia.org/wiki/Comparison_of_cryptographic_hash_functions
+    https://en.wikipedia.org/wiki/SHA-3
+    https://en.wikipedia.org/wiki/Hash_function_security_summary
+    http://cubehash.cr.yp.to/
 
