@@ -54,7 +54,17 @@ Guiding principles: simple, easy, and shareable.
 
 Metadata facilitates creation of library-wide indexes for searching, category hiearchy creation tools, etc.
 
-metadata.yaml contains content meta data about the files in the current directory
+`metadata.yaml` contains generic "content item" (i.e. named content, or content item named
+by the full hierarchy/ directory path under which this item exists) meta data about the
+content item in the current directory, including known public sources for the item:
+   -  downloadable links/ darknet urls etc for digital content items
+   -  physical library identifiers for known publically available physical items
+
+`metadata.digital.yaml` contains "content item" meta data about the files/ digital assets
+associated with this particular content item, stored in the "library owner"'s digital item collection
+
+`metadata.physical.yaml` contains "content item" meta data about physical copies
+associated with this particular content item, stored in the "library owner"'s physical item collection
 
 Examples:
    -  original/ alternative filenames
@@ -69,7 +79,18 @@ Examples:
    -  publisher
    -
 
-TODO: create a YAML schema/ template for metadata.yaml
+TODO: create a YAML schema/ template for `metadata.yaml`
+
+To some degree, we are creating a relational database - for example, many library items
+will be available from multiple physical libraries, but we don't want to repeat all the
+information about a particular physical library, in the metadata.yaml file for every
+single item available at a particular physical library.
+   -  so physical library information must be stored elsewhere in the hierarchy
+   -  and a "library ID" used to identify physical (and digital) libraries
+   -  only the library ID (which should be human-readable and useful so a human can
+      identify the library from its ID) is used in the metadata files for an item
+   -  this way, when phone numbers and other contact details, and other information about
+      a library changes over time, it only changes in one place
 
 
 
@@ -140,12 +161,12 @@ There are other classification systems in use by physical libraries such as
 and *Dewey Decimal Classification*.
 See a comparison here: https://en.wikipedia.org/wiki/Comparison_of_Dewey_and_Library_of_Congress_subject_classification
 
-These classification systems appear to have divisions which are designed to a fair degree
-for optimal physical grouping of objects (e.g. books, maps and CDs) in a physical building
-- and so the groupings perhaps don't quite make sense or at least "may not be optimal"
-from a pure classification point of view, even though such system are optimal, or at
-least convenient, for the storage of thousands of physical items (and in particular
-considering physical storage space and space expansion required over time).
+These classification systems appear to have divisions which are designed to a fair
+degree for optimal physical grouping of objects (e.g. books, maps and CDs) in a physical
+building - and so the groupings perhaps don't quite make sense or at least "may not be
+optimal" from a pure classification point of view, even though such system are optimal,
+or at least convenient, for the storage of thousands of physical items (and in
+particular considering physical storage space and space expansion required over time).
 
 Although this Large Digital Library project may facilitate an individual (or small/
 community library) to record information about which books they physically hold in their
@@ -201,7 +222,9 @@ This is the suggested universal library directory storage hierarchy, pending fur
 
 ## Decisions
 
-Decisions made unless good arguments to the contrary arise:
+Decisions made unless good arguments to the contrary arise. Most still need detailed
+fleshing out/ YAML schema specification.
+
    -  content type
    -  each book, audio cd, movie etc shall be in its own directory, inside a hierarchy
    -  the metadata file for a content directory/folder shall be named metadata.yaml
@@ -216,9 +239,9 @@ Decisions made unless good arguments to the contrary arise:
          -  rather than disallow certain chars and have to add more disallowed chars later
          -  much easier to add "more allowed chars" than to remove chars already being used!
    -  characters allowed in file names:
-      -  [a-zA-Z]
-      -  [0..9]
-      -  : , . = + - _ [ ] % $ @
+      -  `[a-zA-Z]`
+      -  `[0..9]`
+      -  `: , . = + - _ [ ] % $ @`
       -  other chars, like latin, asian, em-dash, en-dash etc ? TODO
 
    -  separate meta data for digital items, from meta data for physical items
@@ -229,13 +252,14 @@ Decisions made unless good arguments to the contrary arise:
          -  optionally share this info on a per-item (i.e. per metadata.physical.yaml file
             basis)
          -  e.g.:
+
             share: no # default if not specified
             share: public # share with anyone who wants
             share: group:my_friends # share with my group called "my_friends"
             share: friend:friend1, friend:friend2 ... # share with friend1 and friend2
             share: friends:"friend1, friend2 ..." # share with friend1 and friend2
 
-TODO:
+### TODO:
    -  file hashes: the following hashes should be stored in metadata.yaml for each content file present:
       -  SHA3-256
          -  see https://en.wikipedia.org/wiki/SHA-3
@@ -246,9 +270,27 @@ TODO:
       -  email address (with PGP key for auth) ?
       -  some alternative naming system ?
          https://www.afnic.fr/en/resources/publications/issue-papers/alternative-naming-systems-to-the-dns-2.html
-      -  gnunet ?
-      -  namecoin ?
       -  some sort of tor/i2p/onion/darknet ID ?
+      -  namecoin ?
+      -  Tor - does not support IP, nor even UDP! (only TCP)
+      -  I2P - ?
+      -  GNUnet https://en.wikipedia.org/wiki/GNUnet
+         -  seems like a more generic solution which would benefit other applications with
+            any effort put in, 
+         -  "GNUnet is a free software framework for decentralized, peer-to-peer
+            networking and an official GNU package. The framework offers link
+            encryption, peer discovery, resource allocation, communication over many
+            transports (such as TCP, UDP, HTTP, HTTPS, WLAN and Bluetooth) and various
+            basic peer-to-peer algorithms for routing, multicast and network size
+            estimation.[4]
 
+            "GNUnet's basic network topology is that of a mesh network. GNUnet includes
+            a distributed hash table (DHT) which is a randomized variant of Kademlia
+            that can still efficiently route in small-world networks. GNUnet offers a
+            "F2F topology" option for restricting connections to only the users'
+            trusted friends. The users' friends' own friends (and so on) can then
+            indirectly exchange files with the users' computer, never using its IP
+            address directly."
+         -  The summary of features seems to fit the Large Digital Library perfectly.
 
-# vim: tw=90
+<!-- vim: tw=90 -->
