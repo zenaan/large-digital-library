@@ -1,5 +1,7 @@
-# Design for a large digital library
+# Design for a Large Digital Library
 Notes info decisions and schemas for a large library which is shareable and updatable by many people around the world.
+
+Guiding principles: simple, easy, and shareable.
 
 
 ## Principles
@@ -131,9 +133,39 @@ Content types:
    -  software (distributions have their package management systems, so perhaps library only for proprietary software)
 
 
+## Comparison notes
+
+There are other classification systems in use by physical libraries such as
+*LCC / Library of Congress Classification* https://en.wikipedia.org/wiki/Library_of_Congress_Classification
+and *Dewey Decimal Classification*.
+See a comparison here: https://en.wikipedia.org/wiki/Comparison_of_Dewey_and_Library_of_Congress_subject_classification
+
+These classification systems appear to have divisions which are designed to a fair degree
+for optimal physical grouping of objects (e.g. books, maps and CDs) in a physical building
+- and so the groupings perhaps don't quite make sense or at least "may not be optimal"
+from a pure classification point of view, even though such system are optimal, or at
+least convenient, for the storage of thousands of physical items (and in particular
+considering physical storage space and space expansion required over time).
+
+Although this Large Digital Library project may facilitate an individual (or small/
+community library) to record information about which books they physically hold in their
+collection, the primary intention is to optimize for a digital library - that is, for the
+storage and indexing of content items as files.
+
+From this "digital storage" point of view, the optimal filesystem/ directory layout is one
+which is most useful to a lay person browsing their file system.
+
+There is no need to group different [sub-]categories merely for storage purposes - we can
+separate every [sub-]category that ought be separated since this will not cause a physical
+storage sytsem problem. So a full and comprehensive folder/ directory/ file system
+hierarchy is therefore preferred over a hierarchy naming system optimised for storage of
+physical items.
+
+
+
 ## Suggested canonical hierarchy
 
-This is the suggested universal library directory storage hierarchy:
+This is the suggested universal library directory storage hierarchy, pending further research and discussion:
 
     $CONTENT_TYPE/
        $LANG/
@@ -189,10 +221,34 @@ Decisions made unless good arguments to the contrary arise:
       -  : , . = + - _ [ ] % $ @
       -  other chars, like latin, asian, em-dash, en-dash etc ? TODO
 
+   -  separate meta data for digital items, from meta data for physical items
+      -  metadata.yaml for generic content item metadata
+      -  metadata.digital.yaml for metadata about digital copies of the items
+      -  metadata.physical.yaml for metadata about physical copies of the items
+      -  by default, do not share metadata.physical.yaml nor metadata.digital.yaml
+         -  optionally share this info on a per-item (i.e. per metadata.physical.yaml file
+            basis)
+         -  e.g.:
+            share: no # default if not specified
+            share: public # share with anyone who wants
+            share: group:my_friends # share with my group called "my_friends"
+            share: friend:friend1, friend:friend2 ... # share with friend1 and friend2
+            share: friends:"friend1, friend2 ..." # share with friend1 and friend2
+
 TODO:
    -  file hashes: the following hashes should be stored in metadata.yaml for each content file present:
       -  SHA3-256
          -  see https://en.wikipedia.org/wiki/SHA-3
       -  CubeHash(i=16,r=16,b=32,f=32,h=512)
          -  see http://cubehash.cr.yp.to/
+   -  need to decide on how to identify friends, nodes etc - e.g.:
+      -  global block chain id ?
+      -  email address (with PGP key for auth) ?
+      -  some alternative naming system ?
+         https://www.afnic.fr/en/resources/publications/issue-papers/alternative-naming-systems-to-the-dns-2.html
+      -  gnunet ?
+      -  namecoin ?
+      -  some sort of tor/i2p/onion/darknet ID ?
 
+
+# vim: tw=90
