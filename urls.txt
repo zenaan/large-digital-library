@@ -6,6 +6,35 @@ The discussion started at here:
     https://lists.cpunks.org/pipermail/cypherpunks/2017-May/037777.html
 
 
+## Library related indexing systems
+
+    https://en.wikipedia.org/wiki/Cataloguing
+		https://en.wikipedia.org/wiki/Five_laws_of_library_science
+
+    https://en.wikipedia.org/wiki/Library_of_Congress_Classification
+    https://en.wikipedia.org/wiki/Comparison_of_Dewey_and_Library_of_Congress_subject_classification
+    https://en.wikipedia.org/wiki/ACM_Computing_Classification_System
+
+    https://en.wikipedia.org/wiki/Mathematics_Subject_Classification
+      - definitive mathematical classifications
+      - these can be e.g. added as a field (the math classification number) to math book's metadata
+
+    https://en.wikipedia.org/wiki/Physics_and_Astronomy_Classification_Scheme
+    https://en.wikipedia.org/wiki/ArXiv
+
+
+## Library related technology links
+
+    https://en.wikipedia.org/wiki/Integrated_library_system
+    https://en.wikipedia.org/wiki/Library_computer_system
+    https://en.wikipedia.org/wiki/List_of_next-generation_library_catalogs
+    https://en.wikipedia.org/wiki/OPAC
+
+    git://git.evergreen-ils.org/Evergreen.git
+    http://git.evergreen-ils.org/
+    https://en.wikipedia.org/wiki/Evergreen_(software)
+
+
 ## Possibly useful links
 
     https://en.wikipedia.org/wiki/Outline_of_science
@@ -26,21 +55,4 @@ The discussion started at here:
     https://en.wikipedia.org/wiki/Hash_function_security_summary
     http://cubehash.cr.yp.to/
 
-
-## Library related indexing systems
-
-    https://en.wikipedia.org/wiki/Cataloguing
-    https://en.wikipedia.org/wiki/Library_of_Congress_Classification
-
-
-## Library related technology links
-
-    https://en.wikipedia.org/wiki/Integrated_library_system
-    https://en.wikipedia.org/wiki/Library_computer_system
-    https://en.wikipedia.org/wiki/List_of_next-generation_library_catalogs
-    https://en.wikipedia.org/wiki/OPAC
-
-    git://git.evergreen-ils.org/Evergreen.git
-    http://git.evergreen-ils.org/
-    https://en.wikipedia.org/wiki/Evergreen_(software)
 
