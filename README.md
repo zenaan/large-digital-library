@@ -260,9 +260,13 @@ Content types:
 
 ## Suggested canonical hierarchy
 
-This is the suggested universal library directory storage hierarchy, pending further research and discussion:
+This is the suggested universal library directory storage hierarchy, pending further
+research and discussion.
 
-    LIBRARY_ROOT/ # this name is outside the library/ specific to a library instance
+See also spec-0.1.yaml
+
+
+    LIBRARY_ROOT/
       metadata/
       peers/
         $PEER_TYPE/
@@ -273,6 +277,15 @@ This is the suggested universal library directory storage hierarchy, pending fur
               logo.svg
               logo.png
               ...
+
+      git_repos/
+        linux/
+        git/
+        apache/
+
+      os_repos/
+        debian/
+        redhat/
 
       $LANGUAGE/
         $CONTENT_TYPE/
@@ -306,6 +319,10 @@ This is the suggested universal library directory storage hierarchy, pending fur
                         [$SUB_FOLDER/]
                           $ITEM_NAME
           ...
+
+
+At any level, an e.g. alphabetical split can be used/specified by the user; e.g. Debian's
+package pools, which also do a `lib{a..z}/` split.
 
 
 
