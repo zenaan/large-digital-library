@@ -1,23 +1,23 @@
 
-# Large Personal Digital Library - Specifications
+# Large Personal Digital Library - Specification
 
 # The spec provides sometimes-overridable defaults.
 
 
-ldpl_spec:
+lpdl_spec:
   -
     version:
       major: 0
       minor: 1
 
     location:
-      note: "Default LDPL filesystem location."
+      note: "Default LPDL filesystem location."
       dir:
         name: /Library
         perms: 775
 
     conf:
-      note: "Primary LDPL configuration."
+      note: "Primary LPDL configuration."
       dir:
         name: .L
         perms: 665
@@ -26,7 +26,7 @@ ldpl_spec:
         perms:
 
     pools:
-      note: "Default location to mount temporarily attached LDPL disks/ data pools."
+      note: "Default location to mount temporarily attached LPDL disks/ data pools."
       dir:
         name: Lpools
         perms: 775

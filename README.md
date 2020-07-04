@@ -324,6 +324,9 @@ See also spec-0.1.yaml
 At any level, an e.g. alphabetical split can be used/specified by the user; e.g. Debian's
 package pools, which also do a `lib{a..z}/` split.
 
+$LANG or $LANGUAGE is always an [IETF BCP 47 language
+tag](https://en.wikipedia.org/wiki/IETF_language_tag).
+
 
 
 ## Library divisions and mnemonics
