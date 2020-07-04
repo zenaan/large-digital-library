@@ -1,0 +1,43 @@
+# lpdl .editorconfig file
+
+root = true
+
+# defaults for all files unless overridden
+[*]
+charset      = utf-8
+end_of_line  = lf
+
+indent_style = tab
+# where indent_style is tab, indent_size should be per-user, NOT per-project or filetype - that's the whole point!
+# BUT, browsers and GitHub render by default at indent_size=8 which is sucky as bro, sucky as!
+# So what we do here is set the preferred default ts for tabs, so that the README.md displays
+# reasonably on GitHub - apologies if you "Live and die by the 8 char TAB, and nothing but the 8
+# char TAB", but you'll need to find a workaround - one good solution would be a per-browser
+# setting, so the end user can change the (default) tab width setting, browser-wide. :
+#indent_size  = 4 - this does NOT work as at 2019 - see links in langlist README for browser plugin
+
+# it IS $CURRENT_YEAR already :)
+max_line_length = 96
+
+# other
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[README.md]
+#indent_style = space
+
+[doc/**]
+#indent_style = space
+#indent_size  = 4
+
+# YAML - spaces for indents is mandatory per spec
+[*.{yaml,yml}]
+indent_style = space
+indent_size  = 2
+
+# Java
+[*.java]
+# for this project, this is absolute:
+indent_style = tab
+# this is a recommendation, not absolute:
+max_line_length = 104

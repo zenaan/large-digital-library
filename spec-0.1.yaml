@@ -1,0 +1,41 @@
+
+# Large Personal Digital Library - Specifications
+
+# The spec provides sometimes-overridable defaults.
+
+
+ldpl_spec:
+  -
+    version:
+      major: 0
+      minor: 1
+
+    location:
+      note: "Default LDPL filesystem location."
+      dir:
+        name: /Library
+        perms: 775
+
+    conf:
+      note: "Primary LDPL configuration."
+      dir:
+        name: .L
+        perms: 665
+      conf:
+        name: library.yaml
+        perms:
+
+    pools:
+      note: "Default location to mount temporarily attached LDPL disks/ data pools."
+      dir:
+        name: Lpools
+        perms: 775
+
+    user:
+      note: "Default user ID to use for the library and it's contents."
+      uid: 1000
+
+    task_queue:
+      note: "Default location to persist jobs to do, and in process, for this library."
+      path: .L/tasks
+
